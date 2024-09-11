@@ -1,0 +1,26 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(112, 114, 96);
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    padding: 10px;
+    height: 100vh;
+}
+.buttons  {
+    position: absolute;
+    top: 10px;
+}
+figure {
+    max-width: 70%;
+    margin: 0 auto;
+}
