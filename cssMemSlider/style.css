@@ -5,22 +5,41 @@ html {
 * {
     box-sizing: border-box;
     text-decoration: none;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: rgb(112, 114, 96);
+   
+}
+.slider-wrapper {
+    position: relative;
+	height: 450px;
+    max-width: 800px;
+	margin: 20px auto 100px;
 }
 
-.slider-wrapper {
-    overflow: hidden;
-    padding: 10px;
-    height: 100vh;
+.slider {
+    display: flex;
+    padding: 0;
+	height: inherit;
+    width: inherit;
+	overflow: hidden;
+    background-color: white;
 }
-.buttons  {
+img {
+    max-width: 800px;
+}
+figcaption {
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
     position: absolute;
-    top: 10px;
+    bottom: -50px;
+    
 }
-figure {
-    max-width: 70%;
-    margin: 0 auto;
+
+.buttons {
+    position: absolute;
+    right: 50px;
 }
