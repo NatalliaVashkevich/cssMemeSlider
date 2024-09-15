@@ -36,10 +36,9 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     background-color: rgb(89, 91, 97);
-    overflow: hidden;
     grid-row: 1;
     grid-column: 1 / span 2;
-    transition: all 0.5s ease;
+    transition: 0.5s;
 
 }
 .image {
@@ -49,13 +48,21 @@ body {
     width: 100%;
     height: 100%;
 }
-.captions {
+.captions-wrapper {
     display: flex;
     grid-row: 2;
     grid-column: 1;
-    width: 100%;
+    max-width: 100%;
+    height: 100%;
     overflow: hidden;
-    transition: all 0.5s ease;
+   
+}
+.captions {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: 0.7s;
 }
 
 .caption-inner {
@@ -65,9 +72,11 @@ body {
 }
 .text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-variant: small-caps;
-    font-size: 1.5rem; 
+    color: white;
+    font-size: 2vw; 
     vertical-align: top;
+    width: 100%;
+    
 }
 
 img {
@@ -81,8 +90,6 @@ img {
     display: flex;
     grid-column: 2;
     grid-row: 2;
-    
-   
 }
 .label-button {
     display: flex;
@@ -94,10 +101,10 @@ img {
 .radio-button {
     background-color: white;
     display: block;
-    width: 3vw;
-    height: 3vw;
+    width: 2.5vw;
+    height: 2.5vw;
     border-radius: 50%;
-    border: 3px solid black;
+    border: 0.3vw solid black;
 }
 .label-button:hover {
     .radio-button {
@@ -107,7 +114,7 @@ img {
 .label-button:active {
     .radio-button {
         background-color: rgb(7, 105, 129); 
-        border: 3px solid rgb(243, 240, 240);
+        border: 0.3vw solid rgb(243, 240, 240);
     } 
 }
 #slide1:checked ~ .buttons >.label-button:nth-child(1) >.radio-button {
@@ -134,19 +141,59 @@ img {
 #slide4:checked ~ .slider-inner {
     transform: translateX(-300%);
 }
-#slide1:checked ~ .captions {
+#slide1:checked ~ .captions-wrapper > .captions {
     transform: translateX(0%);
 }
-#slide2:checked ~ .captions {
+#slide2:checked ~ .captions-wrapper > .captions {
     transform: translateX(-100%);
 }
-#slide3:checked ~ .captions {
+#slide3:checked ~ .captions-wrapper > .captions {
     transform: translateX(-200%);
 }
-#slide4:checked ~ .captions {
+#slide4:checked ~ .captions-wrapper > .captions {
     transform: translateX(-300%);
 }
+@media (hover :hover) {
+    .label-button:hover {
+        .radio-button {
+            background-color: rgb(195, 205, 236); 
+        }
+    }
+}
 
+@media (max-width: 500px) and (min-width: 320px) {
+    .slider-wrapper {
+       
+        grid-template-rows: 60% 10% 10%;
+        grid-template-columns: 100%;
+
+        
+    }
+    .slider-inner {
+        grid-row: 1;
+        grid-column: 1;
+           
+    }
+    .captions-wrapper {
+        
+        grid-row: 3;
+        grid-column: 1;
+        
+    }
+    .buttons {
+
+        grid-row: 2;
+        grid-column: 1;
+        justify-content: center;
+    }
+    .text {
+        font-size: 3vw; 
+        padding-left: 10vw;
+        
+    }
+    
+
+}
 
 
 
