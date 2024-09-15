@@ -168,13 +168,11 @@ img {
        
         grid-template-rows: 60% 10% 30%;
         grid-template-columns: 100%;
-
-        
+  
     }
     .slider-inner {
         grid-row: 1;
         grid-column: 1;
-           
     }
     .captions-wrapper {
         
@@ -190,8 +188,6 @@ img {
     }
     .text {
         font-size: 3vw; 
-        
-        
     }
     img {
         max-width: 100%;
