@@ -11,9 +11,6 @@ body {
     background-color: rgb(89, 91, 97);
 }
 
-.none {
-    display: none;
-}
 
 .slider-wrapper {
     margin: 0 auto;
@@ -23,10 +20,10 @@ body {
     max-height: 100vh;
     max-width: 90vw;
 	display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 75% 25%;
     grid-template-columns: 75% 25%;
     row-gap: 5vw;
-
+    
 }
 
 .radio-input {
@@ -42,6 +39,7 @@ body {
     overflow: hidden;
     grid-row: 1;
     grid-column: 1 / span 2;
+    transition: all 0.5s ease;
 
 }
 .image {
@@ -52,6 +50,20 @@ body {
     height: 100%;
 }
 .captions {
+    display: flex;
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.caption-inner {
+    display: flex;
+    min-width: 100%;
+
+}
+.text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-variant: small-caps;
     font-size: 1.5rem; 
@@ -69,19 +81,21 @@ img {
     display: flex;
     grid-column: 2;
     grid-row: 2;
+    
    
 }
 .label-button {
-    display: block;
+    display: flex;
     cursor: pointer;
-    padding: 0.8rem;
-        
+    padding: 1vw;
+    
+    
 }
 .radio-button {
     background-color: white;
     display: block;
-    width: 2rem;
-    height: 2rem;
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
     border: 3px solid black;
 }
@@ -96,3 +110,46 @@ img {
         border: 3px solid rgb(243, 240, 240);
     } 
 }
+#slide1:checked ~ .buttons >.label-button:nth-child(1) >.radio-button {
+    background-color: rgba(18, 224, 224, 0.808);
+}
+#slide2:checked ~ .buttons >.label-button:nth-child(2) >.radio-button {
+    background-color: rgba(18, 224, 224, 0.808);
+}
+#slide3:checked ~ .buttons >.label-button:nth-child(3) >.radio-button {
+    background-color: rgba(18, 224, 224, 0.808);
+}
+#slide4:checked ~ .buttons >.label-button:nth-child(4) >.radio-button {
+    background-color: rgba(18, 224, 224, 0.808);
+}
+#slide1:checked ~ .slider-inner {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .slider-inner {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slider-inner {
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .slider-inner {
+    transform: translateX(-300%);
+}
+#slide1:checked ~ .captions {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .captions {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .captions {
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .captions {
+    transform: translateX(-300%);
+}
+
+
+
+
+
+
+
